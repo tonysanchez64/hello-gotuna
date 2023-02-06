@@ -1,11 +1,13 @@
 pipeline {
     agent any
-    options{timestamps()}
+    
     stages {
+        timestamps{
         stage('Build'){
             steps{
                 sh 'docker-compose build'
             }
+        }
         }
         stage('deploy'){
             steps{
